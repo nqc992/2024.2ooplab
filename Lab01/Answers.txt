@@ -1,0 +1,35 @@
+1. What happens if users choose “Cancel”?
+
+-Nếu người dùng chọn "Cancel", chương trình sẽ không chạy vì Eclipse yêu cầu lưu các thay đổi trước khi thực thi ứng dụng. Cụ thể:
+	+Khi nhấn "Run" hoặc "Debug" trong Eclipse mà có tệp chưa được lưu, một hộp thoại "Save and Launch" sẽ xuất hiện, hỏi người dùng có muốn lưu tệp trước khi chạy không.
+	+Nếu người dùng chọn "Cancel", hộp thoại sẽ đóng lại mà không lưu tệp. Do đó, quá trình chạy ứng dụng cũng bị hủy bỏ.
+	+Điều này giúp ngăn chặn việc thực thi mã chưa được lưu, đảm bảo rằng chương trình chạy trên phiên bản mã nguồn mới nhất đã được lưu.
+
+2. How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do” and “I don’t” (Suggestion: Use Javadocs or using Eclipse/Netbean IDE help). 
+	- Sử dụng JOptionPane trong Java để tùy chỉnh các tùy chọn của hộp thoại.
+  		Trong các ví dụ trong slide, có ví dụ về việc sử dụng JOptionPane, dựa vào ví dụ, ta có thể tạo ra các hộp thoại tùy chọn mới 
+	+Ví dụ về hộp thoại:
+		
+import javax.swing.JOptionPane;
+
+public class CustomOptionDialog {
+    public static void main(String[] args) {
+        String[] options = {"I accept", "I decline"}; 
+        int selection = JOptionPane.showOptionDialog(
+            null, 
+            "Do you accept the terms?",  
+            "Confirmation", 
+            JOptionPane.DEFAULT_OPTION, 
+            JOptionPane.INFORMATION_MESSAGE, 
+            null, 
+            options,  
+            options[0] // Chọn mặc định là "I accept"
+        );
+
+        if (selection == 0) {
+            System.out.println("User chose: I accept");
+        } else {
+            System.out.println("User chose: I decline");
+        }
+    }
+}
