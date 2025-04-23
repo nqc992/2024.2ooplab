@@ -1,0 +1,26 @@
+1. Những lợi ích của tính đa hình (Polymorphism):
+Tính đa hình giúp tái sử dụng mã hiệu quả hơn. Khi bạn viết các phương thức làm việc với kiểu lớp cha, bạn vẫn có thể truyền vào các đối tượng thuộc lớp con, giúp mã linh hoạt và dễ mở rộng.
+
+Một lợi ích khác là khả năng mở rộng linh hoạt. Khi bạn muốn thêm chức năng mới bằng cách tạo ra các lớp con, bạn không cần phải thay đổi mã nguồn đã có, giúp hệ thống dễ bảo trì và nâng cấp.
+
+Tính đa hình cũng giúp đơn giản hóa mã nguồn. Thay vì sử dụng nhiều câu lệnh điều kiện phức tạp (như if-else hay switch), chương trình sẽ tự động chọn đúng phương thức thông qua cơ chế ràng buộc động (dynamic binding).
+
+Cuối cùng, tính đa hình tạo ra sự nhất quán trong giao diện lập trình. Dù đối tượng có thể thuộc các lớp khác nhau, bạn vẫn có thể xử lý chúng theo cách giống nhau nếu chúng tuân theo một interface chung.
+
+2. Kế thừa (Inheritance) hỗ trợ tính đa hình như thế nào trong Java:
+Kế thừa thiết lập mối quan hệ “là một” (is-a) giữa các lớp, nghĩa là lớp con kế thừa các đặc điểm và hành vi từ lớp cha.
+
+Thông qua kế thừa, một tham chiếu kiểu lớp cha có thể trỏ tới đối tượng thuộc lớp con. Cách này được gọi là “lên kiểu” (upcasting) và là nền tảng của đa hình trong Java.
+
+Ngoài ra, nhờ vào việc ghi đè phương thức (method overriding), lớp con có thể cung cấp cách triển khai riêng cho các phương thức được khai báo trong lớp cha. Điều này giúp đối tượng lớp con có hành vi riêng biệt ngay cả khi được xử lý thông qua kiểu lớp cha.
+
+Cơ chế ràng buộc động trong Java cho phép chương trình xác định phương thức cụ thể nào sẽ được gọi dựa trên kiểu thực tế của đối tượng tại thời điểm chạy, chứ không phải tại thời điểm biên dịch. Đây là cốt lõi của tính đa hình động (dynamic polymorphism).
+
+3. Sự khác biệt giữa kế thừa và đa hình trong Java:
+Kế thừa là một cơ chế cho phép tạo ra lớp mới từ lớp đã có, giúp tái sử dụng mã và tổ chức các lớp theo quan hệ phân cấp. Nhờ đó, bạn có thể mở rộng chức năng của hệ thống mà không cần viết lại từ đầu.
+
+Trong khi đó, tính đa hình là khả năng một đối tượng có thể biểu hiện dưới nhiều hình thức khác nhau. Nó cho phép các đối tượng thuộc những lớp khác nhau được xử lý thông qua cùng một interface hoặc lớp cha.
+
+Tính đa hình thường được thực hiện thông qua việc ghi đè phương thức và sử dụng interface, giúp mã nguồn trở nên linh hoạt và tổng quát hơn.
+
+Tóm lại, kế thừa là nền tảng để đa hình hoạt động, nhưng mục đích của chúng khác nhau: kế thừa phục vụ cho tổ chức mã và tái sử dụng, còn đa hình tập trung vào sự linh hoạt trong hành vi và khả năng xử lý đối tượng một cách thống nhất.
