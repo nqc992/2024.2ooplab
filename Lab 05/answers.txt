@@ -1,0 +1,29 @@
+1. The Aims class must be updated to handle any exceptions generated when the play() methods
+are called. What happens when you don’t update for them to catch?
+
+Khi không cập nhật lớp Aims để xử lý các ngoại lệ phát sinh từ phương thức play(), chương trình có thể gặp một số vấn đề nghiêm trọng:
+
+Chương trình bị dừng đột ngột (crash): Nếu một ngoại lệ (exception) xảy ra mà không được xử lý, chương trình sẽ kết thúc ngay tại chỗ, không tiếp tục thực hiện các lệnh sau. Điều này gây gián đoạn trải nghiệm người dùng.
+
+Không có thông báo lỗi rõ ràng: Người dùng không biết chuyện gì đã xảy ra. Thay vì một thông báo dễ hiểu như “Không thể phát media vì độ dài bằng 0”, họ chỉ thấy thông báo lỗi kỹ thuật hoặc màn hình console hiển thị stack trace.
+
+Mất kiểm soát luồng chương trình: Khi không dùng try-catch, ta không thể quyết định chương trình nên làm gì tiếp theo sau khi xảy ra lỗi (ví dụ: bỏ qua media đó, thử lại, hay ghi log lỗi).
+
+Giảm độ tin cậy và khả năng bảo trì của phần mềm: Việc không xử lý ngoại lệ đúng cách làm cho chương trình dễ lỗi và khó mở rộng về sau.
+
+Do đó, lớp Aims nên sử dụng cấu trúc try-catch để gọi play(), ví dụ:
+
+try {
+    media.play();
+} catch (PlayerException e) {
+    System.err.println("Lỗi khi phát media: " + e.getMessage());
+}
+
+Cách làm này giúp chương trình chạy ổn định, dễ kiểm soát và thân thiện hơn với người dùng.
+
+
+
+
+
+
+
